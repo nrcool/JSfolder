@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Names</title>
+    <style>
+    .box{
+        font-size: 40px;
+    }
+    
+    </style>
+</head>
+<body>
+    <button onclick="RandomNames()">Get Random Name</button>
+    <div class="box" id="randomnames">
+
+    </div>
+
+<script>
+    let box=document.getElementById('randomnames');
+    console.log(localStorage)
+if(localStorage.length===0){
+    let names=[
+    "Naqvi","Rene","Ehud","Saad","Franz","Tameem","Ahmad","Ramiz","Mohammad","Alisio","Yasmin","Lorraine","Hannah","Ashernafi","Yasir","Angi","testing"
+];
+localStorage.setItem('names',JSON.stringify(names))
+}else{
+    console.log("already stored")
+}
+/* let data=JSON.parse(localStorage.getItem("names"));
+
+console.log(data) */
+let RandomNames=()=>{
+    let names=JSON.parse(localStorage.getItem("names"));
+    let randomnum= Math.floor(Math.random()*names.length);
+   console.log(names[randomnum]);
+   box.innerHTML=names[randomnum];
+   names.splice(randomnum,1);
+   if(names.length>0){
+       localStorage.clear();
+    localStorage.setItem('names',JSON.stringify(names))
+   }
+
+  /*  if(names.length===1){
+        box.innerHTML=names[randomnum];
+       localStorage.removeItem('names');
+       console.log("working")
+   } */
+}
+
+
+</script>
+</body>
+</html>
