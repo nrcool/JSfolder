@@ -86,14 +86,20 @@ let minRemovals=(...arr)=>{
         sum+=elem;
     });
     if(sum%2===0){
-        return 0;
+        removal=`0 removal :sum of all the elements is ${sum}`
+        return removal;
     }else{
-        return 1;
+        for(let i=0;i<arr.length;i++){
+            if(arr[i]%2!==0){
+                 removal=`1 removal : remove only ${arr[i]} from arguments to get even Sum`
+                return removal;
+            }
+        }
     }
 }
 console.log(minRemovals(1, 2, 3, 4));
 console.log(minRemovals(5, 7, 9, 11));
-console.log(minRemovals(5, 7, 9, 12));
+console.log(minRemovals(5, 7, 9,12));
 
 
 /* 8. Quadratic Equation
@@ -133,7 +139,7 @@ Getdate([23,05,2019]);
 
 let GetDate1=array=>{
 let date=(new Date(...array));
-console.log( date);
+console.log(date);
 };
 
 GetDate1([2019,04,24]);
