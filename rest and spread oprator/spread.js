@@ -43,7 +43,7 @@ const person = {name: "John"};
 const job = {role: "Teacher"};
 
 let newPerson={...person};
-console.log(newPerson)
+console.log(newPerson);
 let employee={...person,...job};
 console.log(employee);
 
@@ -80,18 +80,23 @@ minRemovals(5, 7, 9, 11) ➞ 0 removals
 minRemovals(5, 7, 9, 12) ➞ 1 removal */
 console.log("::::::::::::::::::7:::::::::::::::.");
 
+
 let minRemovals=(...arr)=>{
     let sum=0;
     arr.forEach(elem=>{
         sum+=elem;
     });
+    let count=1;
     if(sum%2===0){
         removal=`0 removal :sum of all the elements is ${sum}`
         return removal;
     }else{
         for(let i=0;i<arr.length;i++){
-            if(arr[i]%2!==0){
-                 removal=`1 removal : remove only ${arr[i]} from arguments to get even Sum`
+            if(arr[i]%2==0){
+               arr.shift(arr[i]);
+               count++;
+            }else{
+                removal=`${count} removal : remove first ${count} values from arguments to get even ${sum}`
                 return removal;
             }
         }
@@ -99,7 +104,7 @@ let minRemovals=(...arr)=>{
 }
 console.log(minRemovals(1, 2, 3, 4));
 console.log(minRemovals(5, 7, 9, 11));
-console.log(minRemovals(5, 7, 9,12));
+console.log(minRemovals(12, 5, 7,9));
 
 
 /* 8. Quadratic Equation
@@ -139,8 +144,8 @@ Getdate([23,05,2019]);
 
 let GetDate1=array=>{
 let date=(new Date(...array));
-console.log(date);
+console.log(date.toLocaleDateString(),date.getTime().toLocaleString());
 };
 
-GetDate1([2019,04,24]);
+GetDate1([2019,04,27]);
 
