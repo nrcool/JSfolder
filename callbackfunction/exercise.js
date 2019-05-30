@@ -7,8 +7,8 @@ function each(arr,callback){
     }
 }
 
-each([1,2,3,4], function(val){
-    console.log(val);
+each([1,2,3,4], function (callback){
+    console.log(callback);
 });
 
 each([1,2,3,4], function(val){
@@ -88,7 +88,7 @@ Examples: */
 let filter2=(arr,callback)=>{
     let newarray=[];
     arr.forEach(element => {
-            if(callback(element)){
+            if(!callback(element)){
                 newarray.push(element);
             }     
     });
