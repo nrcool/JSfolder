@@ -6,7 +6,7 @@ console.log("::::::::::::::::1::::::::::::::.");
 
 let arrayOfNumbers = [3, 45, 6, 56, 7, 9];
 let incrementedArray = arrayOfNumbers.map(num => num + 1);
-console.log(incrementedArray);
+console.log("each item in array incremented with 1 ",incrementedArray);
 
 
 console.log("::::::::::::::::2::::::::::::::.");
@@ -23,8 +23,8 @@ let sum = arr => {
     return total;
 };
 
-console.log(sum([1, 2, 3, 4, 5]));
-console.log(sum([6, 7, 7]));
+console.log("sum of given array[1, 2, 3, 4, 5]  is ",sum([1, 2, 3, 4, 5]));
+console.log("sum of given array[6, 7, 7]  is ",sum([6, 7, 7]));
 
 
 
@@ -55,7 +55,7 @@ var reducedobject = data.reduce((obj, value) => {
     }
     return obj;
 }, {});
-console.log(reducedobject);
+console.table(reducedobject);
 
 console.log("::::::::::::::::4::::::::::::::.");
 /* 4. Inventors
@@ -80,7 +80,7 @@ const inventors = [
 ];
 
 let mappedArray = inventors.map(item => item.first + " " + item.last);
-console.log(mappedArray);
+console.table(mappedArray);
 
 let reducedArray = inventors.reduce((holder, item) => {
     holder[item.first+" "+item.last] = item.passed - item.year;
@@ -92,8 +92,8 @@ let reducedArray1 = inventors.reduce((holder, item) => {
     return holder;
 },0);
 
-console.log(reducedArray);
-console.log(reducedArray1);
+console.table(reducedArray);
+console.log("sum of all invertors ages = ", reducedArray1);
 
 
 /*   5. Square Root
@@ -102,7 +102,7 @@ Given an array of numbers, find the square root of those numbers using map. */
 console.log(":::::::::::::::5::::::::::::");
 let arr = [3, 4, 5, 6]
 let arraysqr = arr.map(num => num ** 2);
-console.log(arraysqr);
+console.log("Squareroot of all items in array[3, 4, 5, 6] is " ,arraysqr);
 
 /* 6. Instances of Letters
 Create a function that takes a string as an argument and counts the number of each letter in that string. */
@@ -121,7 +121,7 @@ let countfunc = string => {
     return count;
 };
 
-console.log(countfunc("javascript"));
+console.table(countfunc("javascript"));
 
 console.log("::::::::::::::::7:::::::::::::::")
 /* 7. List of Movies
@@ -158,8 +158,8 @@ let filterEvens = arr => {
     let filterednum = arr.filter(num => num % 2 === 0);
     return filterednum;
 };
-console.log(filterEvens([1, 2, 3, 11, 12, 13]));
-console.log(filterEvens([22, 2, 31, 110, 6, 13]));
+console.log("even numbers in array ",filterEvens([1, 2, 3, 11, 12, 13]));
+console.log("even numbers in array ",filterEvens([22, 2, 31, 110, 6, 13]));
 
 console.log(":::::::::::::::9::::::::::::::::::.");
 
@@ -237,17 +237,17 @@ Given the following array of shapes, complete the task below:
     [10, "Decagon"]
     ];
     shapes.sort((a,b)=>a[0]-b[0]);
-    console.log(shapes);
+    console.table(shapes);
     shapes.sort((a,b)=>{
         if(a[1].toUpperCase()<b[1].toUpperCase()){
             return -1;
         }
-        if(a[1].toUpperCase()<b[1].toUpperCase()){
+        if(a[1].toUpperCase()>b[1].toUpperCase()){
             return 1;
         }
         return 0;
     }
         );
-    console.log(shapes);
+    console.table(shapes);
 
-   
+   console.log(9**(1/2))
