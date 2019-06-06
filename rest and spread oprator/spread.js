@@ -20,6 +20,7 @@ Create a function to find the largest number in an array. */
 let Largest=arr=>{
     return Math.max(...arr);
 };
+
 console.log(Largest([5,6,9]));
 
 /* 4. Find the Smallest
@@ -69,7 +70,7 @@ let isWhole=(...arr)=>{
     }
 }
 
-console.log(isWhole([1, 2, 3, 4]));
+console.log(isWhole(1, 2, 3, 4));
 
 /* 7. Minimum Removals for Even Output
 Create a function that takes 4 integers as an argument and returns the minimum number of removals to make the sum of all the elements even.

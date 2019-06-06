@@ -85,7 +85,7 @@ console.table(mappedArray);
 let reducedArray = inventors.reduce((holder, item) => {
     holder[item.first+" "+item.last] = item.passed - item.year;
     return holder;
-}, {})
+}, {});
 let reducedArray1 = inventors.reduce((holder, item) => {
     total = item.passed - item.year;
     holder=holder+total;
@@ -194,13 +194,19 @@ let origialArray = [
     { key: 8, name: "Ron" },
     { key: 9, name: "Kenneth" },
     { key: 10, name: "Kyle" }];
-
+//using map 
     let mappedARRAY=origialArray.map(item=>{
         let obj={};
         obj[item.key]=item.name;
         return obj;
     });
+//using reduce
+    let mappedArray1=origialArray.reduce((holder,value)=>{
+        holder[value.key]=value.name;
+        return holder;
+    },{})
     console.log(mappedARRAY);
+    console.log(mappedArray1);
 
     console.log(":::::::::::::::::11:::::::::::::::::");
 
