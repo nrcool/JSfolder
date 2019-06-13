@@ -18,12 +18,15 @@ class Pokemon {
         /*  this.magic=this.magic-this.totalmagicsused; */
         console.log(`${this.name} has ${this.health} lives and ${this.magic - this.totalmagicsused} magics left`);
         if (this.counter > 3) {
-            console.log(`${this.name} won`)
+            console.log(`${this.name} won`);
         } else {
-            console.log(`${this.name} lost`)
+            console.log(`${this.name} lost`);
         }
     }
-
+    getMagics(){
+        let random=Math.floor(Math.random()*20);
+        this.magic=this.magic+random;
+    }
     attack(index, opponent) {
 
         /*  random=Math.floor(Math.random()*this.skills.length); */

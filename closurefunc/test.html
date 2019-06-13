@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        
+
+//closure
+
+function makeAddrer(x){
+    function add(y){
+        return y+x;
+    }
+    return add;
+}
+console.dir(makeAddrer);
+
+function test(){
+    let y=7;
+    function plus(){
+        let x=0;
+        let sum=y+x;
+        return sum;
+    }
+    return plus;
+}
+console.dir(test)
+
+let plusone= makeAddrer(1);
+
+let plusten= makeAddrer(10);
+
+console.log(plusone(3));//4
+console.log(plusten(10));//20
+
+
+function makeTitler(x){
+    function title(y){
+        return `${x} ${y}`
+    }
+    return title;
+}
+
+let mrTitle=makeTitler("Mr.");
+let msTitle=makeTitler("Ms");
+
+console.log(mrTitle("John"));//Mr. John
+console.log(msTitle("Lara"));//Ms Lara
+
+console.log(makeTitler("Dr.")("Jane"));//Dr. Jane
+console.log(makeTitler("Prof.")("Mark"));//Dr. Jane
+
+
+
+
+        
+        
+        </script>
+</body>
+</html>

@@ -24,7 +24,7 @@ function Cashier(price, paid, cid) {
 
 }
 
-Cashier(50, 40, 60);
+Cashier(50, 40, 60.57);
 
 
 
