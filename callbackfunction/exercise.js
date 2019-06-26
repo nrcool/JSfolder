@@ -26,7 +26,7 @@ Example:*/
 let map=(arr,callback)=>{
     let newarray=[];
     arr.forEach(element => {
-        newarray.push(callback(element))
+        newarray.push(callback(element));
     });
    console.log(newarray);
 }
